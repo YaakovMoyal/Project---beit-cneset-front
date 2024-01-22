@@ -17,7 +17,11 @@ const Card: FC<BeitCneset> = ({
   const navigate = useNavigate();
   return (
     <MyCard onClick={() => navigate(`${ROUTES.home}/${name}`)}>
-      <DivImage $backgroundImage={image}></DivImage>
+      <DivImage
+        $backgroundImage={image}
+        $background_size="cover"
+        $w="100%"
+      ></DivImage>
       <h2>{name}</h2>
       <h3>{community}</h3>
       <div>

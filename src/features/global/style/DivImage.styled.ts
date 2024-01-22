@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 interface BoxProps {
   $backgroundImage: string;
+  $background_size: "cover" | "contain";
   $h?: string;
+  $w?: string;
 }
 
 export const DivImage = styled.div<BoxProps>`
-  width: 100%;
   height: ${(props) => (props.$h ? props.$h : "30vh")};
+  width: ${(props) => (props.$w ? props.$w : "50%")};
   background-image: url(${(props) => props.$backgroundImage});
-  background-size: cover;
+  background-size: ${(props) => props.$background_size};
   background-repeat: no-repeat;
-  border-radius: 8px 8px 0 0;
 `;

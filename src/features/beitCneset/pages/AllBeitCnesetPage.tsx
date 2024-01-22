@@ -41,7 +41,7 @@ const AllBeitCnesetPage = () => {
 
   return (
     <>
-      <div>
+      <MyDiv $align_content="flex-end">
         <SearchBox>
           <SearchInput
             type="text"
@@ -55,9 +55,9 @@ const AllBeitCnesetPage = () => {
             <FaSearch />
           </SearchButton>
         </SearchBox>
-      </div>
+      </MyDiv>
 
-      <MyDiv style={{ flexWrap: "wrap" }}>
+      <MyDiv $flex_direction="row">
         {results.map((bc: BeitCneset, i: number) => {
           const { name, community, address, gabai, tfilot, image } = bc;
 

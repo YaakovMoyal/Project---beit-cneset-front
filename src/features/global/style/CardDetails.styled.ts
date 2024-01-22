@@ -2,26 +2,32 @@ import styled from "styled-components";
 
 export const MyCardDetails = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  border: 2px solid #3498db;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 0 0 16px 0;
-  margin: 16px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 600px;
-  min-width: 400px;
-  max-height: 800px;
+  margin: 6px 0;
+  width: -webkit-fill-available;
+  height: 100vh;
 
   p {
     margin: 8px 0;
   }
 
-  h2 {
-    font-size: 2em;
-    margin-bottom: 5px;
+  h1 {
+    font-size: 2.8em;
+    margin: 10px 0;
     color: #3498db;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 8px 0;
+  }
+
+  span {
+    font-size: 1.1em;
+    margin: 5px 0;
   }
 
   h5 {

@@ -5,10 +5,10 @@ export const MyCard = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #3498db;
   padding: 0 0 16px 0;
   margin: 16px;
-  border-radius: 10px;
+  // border: 1px solid #3498db;
+  // border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: max-content;
   min-width: 300px;
@@ -16,6 +16,11 @@ export const MyCard = styled.div`
 
   p {
     margin: 8px 0;
+  }
+
+  h1 {
+    font-size: 3em;
+    color: #3498db;
   }
 
   h2 {

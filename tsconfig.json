@@ -19,7 +19,8 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/features/global/style/Global.styled.ts"
+    "src/features/global/style/Global.styled.ts",
+    "src/features/beitCneset/pages/BeitCnesetPage.jsx"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
