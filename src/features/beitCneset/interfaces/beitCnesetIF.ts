@@ -1,6 +1,6 @@
 import { Gabai } from "../../users/interfaces/usersIF";
 
-interface Tfila {
+export interface Tfila {
   tfila: string;
   time: string;
 }
