@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const MyButton = styled.button`
-  background-color: #4caf50; /* צבע רקע */
-  color: white; /* צבע טקסט */
-  padding: 10px 20px; /* רווחים פנימיים */
-  font-size: 16px; /* גודל גופן */
-  border: none; /* להסיר מסגרת */
-  border-radius: 5px; /* חיתוך פינות */
-  cursor: pointer; /* סמן עכבר מתנהג כמו ידית תיק */
-  transition: background-color 0.3s; /* אנימציה שמשנה צבע רקע כאשר העכבר חופף מעליו */
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px; /* שינוי רווחים פנימיים */
+  font-size: 12px; /* שינוי גודל גופן */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 15px;
 
   &:hover {
     transform: scale(1.01);

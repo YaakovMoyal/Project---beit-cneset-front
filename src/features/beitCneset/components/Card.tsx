@@ -1,10 +1,11 @@
 import { BeitCneset } from "../interfaces/beitCnesetIF";
 import { MyCard } from "../../global/style/Card.styled";
-import { MyBox } from "../../global/style/MyBox.styled";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { DivImage } from "../../global/style/DivImage.styled";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../global/routers/routesModel";
+import { MyDiv } from "../../global/style/MyDiv.styled";
+import { MyButton } from "../../global/style/MyButton.styled";
 
 const Card: FC<BeitCneset> = ({
   name,
@@ -15,6 +16,7 @@ const Card: FC<BeitCneset> = ({
   image,
 }) => {
   const navigate = useNavigate();
+  const [showMore, setShowMore] = useState(false);
   return (
     <MyCard onClick={() => navigate(`${ROUTES.home}/${name}`)}>
       <DivImage
@@ -31,15 +33,23 @@ const Card: FC<BeitCneset> = ({
           </p>
         ))}
       </div>
-      <div>
-        <h4>{address}</h4>
-      </div>
-      <MyBox>
-        <h4>איש קשר</h4>
-        <h5>{gabai.name}</h5>
-        <h5>{gabai.phone}</h5>
-        <h5>{gabai.email}</h5>
-      </MyBox>
+      <MyButton
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowMore(!showMore);
+        }}
+      >
+        {showMore ? "CLOSE" : "SHOW MORE"}
+      </MyButton>
+      {showMore && (
+        <MyDiv>
+          <h3>{address}</h3>
+          <h4>איש קשר</h4>
+          <h5>{gabai.name}</h5>
+          <h5>{gabai.phone}</h5>
+          <h5>{gabai.email}</h5>
+        </MyDiv>
+      )}
     </MyCard>
   );
 };
