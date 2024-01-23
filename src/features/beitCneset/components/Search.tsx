@@ -1,32 +1,38 @@
-// import {
-//   SearchBox,
-//   SearchInput,
-//   SearchButton,
-// } from "../../global/style/MySearch.styled";
-// import { useState } from "react";
+import {
+  SearchBox,
+  SearchInput,
+  SearchButton,
+} from "../../global/style/MySearch.styled";
+import React, { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
+import { MyDiv } from "../../global/style/MyDiv.styled.ts";
 
-// const Search = () => {
-//   const [searchTerm, setSearchTerm] = useState("");
+interface SearchComponentProps {
+  onSearch: (term: string) => void;
+}
 
-//   const [results, setResults] = useState<string[]>([]);
+const SearchComponent: React.FC<SearchComponentProps> = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-//   const handleSearch = () => {
-//     setResults(results.filter((item) => item.includes(searchTerm)));
-//   };
+  useEffect(() => {
+    onSearch(searchTerm);
+  }, [searchTerm]);
 
-//   return (
-//     <div>
-//       <SearchBox>
-//         <SearchInput
-//           type="text"
-//           placeholder="Search..."
-//           value={searchTerm}
-//           onChange={(e) => setSearchTerm(e.target.value)}
-//         />
-//         <SearchButton onClick={handleSearch}>Search</SearchButton>
-//       </SearchBox>
-//     </div>
-//   );
-// };
+  return (
+    <MyDiv $align_content="flex-end">
+      <SearchBox>
+        <SearchInput
+          type="text"
+          placeholder=" ... חפש בית כנסת"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <SearchButton onClick={() => onSearch(searchTerm)}>
+          <FaSearch />
+        </SearchButton>
+      </SearchBox>
+    </MyDiv>
+  );
+};
 
-// export default Search;
+export default SearchComponent;

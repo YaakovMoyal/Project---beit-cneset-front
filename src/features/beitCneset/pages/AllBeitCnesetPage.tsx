@@ -1,17 +1,10 @@
-import { FaSearch } from "react-icons/fa";
-import { MyDiv } from "../../global/style/MyDiv.styled.ts";
-import { BeitCneset } from "../interfaces/beitCnesetIF.ts";
-import Card from "../components/Card.tsx";
-import {
-  SearchBox,
-  SearchInput,
-  SearchButton,
-} from "../../global/style/MySearch.styled";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BeitCneset } from "../interfaces/beitCnesetIF.ts";
+import SearchComponent from "../components/Search.tsx";
+import AllBeitCneset from "../components/AllBeitCneset.tsx";
 
 const AllBeitCnesetPage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<BeitCneset[]>([]);
   const [originalData, setOriginalData] = useState<BeitCneset[]>([]);
 
@@ -28,52 +21,22 @@ const AllBeitCnesetPage = () => {
       });
   }, []);
 
-  useEffect(() => {
+  const handleSearch = (term: string) => {
     setResults(
       originalData.filter(
         (item) =>
-          item.name.includes(searchTerm) ||
-          item.address.includes(searchTerm) ||
-          item.community.includes(searchTerm)
+          item.name.includes(term) ||
+          item.address.includes(term) ||
+          item.community.includes(term)
       )
     );
-  }, [searchTerm, originalData]);
+  };
 
   return (
     <>
-      <MyDiv $align_content="flex-end">
-        <SearchBox>
-          <SearchInput
-            type="text"
-            placeholder=" ... חפש בית כנסת"
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
-          />
-          <SearchButton>
-            <FaSearch />
-          </SearchButton>
-        </SearchBox>
-      </MyDiv>
+      <SearchComponent onSearch={handleSearch} />
 
-      <MyDiv $flex_direction="row">
-        {results.map((bc: BeitCneset, i: number) => {
-          const { name, community, address, gabai, tfilot, image } = bc;
-
-          return (
-            <Card
-              image={image}
-              name={name}
-              address={address}
-              community={community}
-              gabai={gabai}
-              tfilot={tfilot}
-              key={i}
-            />
-          );
-        })}
-      </MyDiv>
+      <AllBeitCneset results={results} />
     </>
   );
 };
