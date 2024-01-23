@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { BeitCneset } from "../interfaces/beitCnesetIF";
-import { MyBox } from "../../global/style/MyBox.styled";
 import { MyDiv } from "../../global/style/MyDiv.styled";
 import CardDetails from "../components/CardDetails";
 import { useEffect, useState } from "react";
@@ -24,11 +23,7 @@ const BeitCnesetDetailsPage = () => {
   }, []);
 
   if (!bcSelected) {
-    return (
-      <MyBox>
-        <p>לא נמצאו תוצאות</p>
-      </MyBox>
-    );
+    return null;
   }
 
   const { name, community, address, gabai, tfilot, image } = bcSelected;
