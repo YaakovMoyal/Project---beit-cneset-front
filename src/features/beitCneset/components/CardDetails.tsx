@@ -42,7 +42,7 @@ const CardDetails: FC<BeitCneset> = ({
       </MyDiv>
       <MyDiv
         $flex_direction="row"
-        $w="95%"
+        $w="85%"
         $justify_content="space-between"
         $align_content="flex-end"
         $border_radius="6px"

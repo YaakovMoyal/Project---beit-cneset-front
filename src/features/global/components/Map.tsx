@@ -33,7 +33,7 @@ const OpenLayersMap: React.FC = () => {
       source: new VectorSource({
         features: [
           new Feature({
-            geometry: new Point(fromLonLat([34.781, 32.0855])),
+            geometry: new Point(fromLonLat([34.781, 32.0863])),
           }),
         ],
       }),
