@@ -4,6 +4,7 @@ export const ROUTES = {
   home: "/The Project",
   allBeitCneset: "abc",
   beitCneset: ":bc",
+  edit: "abc/edit/:bc",
   about: "about",
   error: "*",
 };

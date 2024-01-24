@@ -9,6 +9,7 @@ export const MyCardDetails = styled.div`
   margin: 6px 0;
   width: -webkit-fill-available;
   height: 100vh;
+  // max-height: 400px;
 
   p {
     margin: 8px 0;

@@ -1,20 +1,21 @@
 import { MyFooter } from "../style/MyFooter.styled";
 import { BoxIcons } from "../style/BoxIcons.styled";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <MyFooter>
       <BoxIcons>
-        <a href="">
+        <Link to="">
           <FaFacebook />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <FaInstagram />
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <FaTwitter />
-        </a>
+        </Link>
       </BoxIcons>
     </MyFooter>
   );

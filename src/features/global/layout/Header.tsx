@@ -4,9 +4,24 @@ import { BoxIcons } from "../style/BoxIcons.styled";
 import { MyDiv } from "../style/MyDiv.styled";
 import { MyHeader } from "../style/MyHeader.styled";
 import { LiaSignInAltSolid, LiaSignOutAltSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-  const isLogin = false;
+  const [isLogin, setIsLogin] = useState(!!localStorage.getItem("token"));
+
+  useEffect(() => {
+    // עדכון של מצב התחברות כאשר הטוקן משתנה
+    setIsLogin(!!localStorage.getItem("token"));
+  }, []);
+
+  const handleLogout = () => {
+    // מחיקה של הטוקן מתוך localStorage
+    localStorage.removeItem("token");
+    // עדכון של מצב התחברות
+    setIsLogin(false);
+  };
+
   return (
     <MyHeader>
       <BoxIcons>
@@ -24,13 +39,13 @@ const Header = () => {
 
       <BoxIcons>
         {isLogin ? (
-          <a href={`${ROUTES.home}/${ROUTES.allBeitCneset}`}>
+          <Link to={`${ROUTES.home}`} onClick={handleLogout}>
             <LiaSignOutAltSolid />
-          </a>
+          </Link>
         ) : (
-          <a href={`${ROUTES.sign_up}`}>
+          <Link to={`${ROUTES.sign_up}`}>
             <LiaSignInAltSolid />
-          </a>
+          </Link>
         )}
       </BoxIcons>
     </MyHeader>

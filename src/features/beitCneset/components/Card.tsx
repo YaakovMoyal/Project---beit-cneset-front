@@ -2,10 +2,11 @@ import { BeitCneset } from "../interfaces/beitCnesetIF";
 import { MyCard } from "../../global/style/Card.styled";
 import { FC, useState } from "react";
 import { DivImage } from "../../global/style/DivImage.styled";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../global/router/routesModel";
 import { MyDiv } from "../../global/style/MyDiv.styled";
 import { MyButton } from "../../global/style/MyButton.styled";
+import { FaEdit } from "react-icons/fa";
 
 const Card: FC<BeitCneset> = ({
   name,
@@ -22,6 +23,7 @@ const Card: FC<BeitCneset> = ({
       <DivImage
         $backgroundImage={image}
         $background_size="cover"
+        $max_h="180px"
         $w="100%"
       ></DivImage>
       <h2>{name}</h2>
@@ -41,6 +43,16 @@ const Card: FC<BeitCneset> = ({
       >
         {showMore ? "CLOSE" : "SHOW MORE"}
       </MyButton>
+      <Link
+        to={`edit/${name}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          // setShowMore(!showMore);
+        }}
+      >
+        <FaEdit />
+      </Link>
+
       {showMore && (
         <MyDiv>
           <h3>{address}</h3>
