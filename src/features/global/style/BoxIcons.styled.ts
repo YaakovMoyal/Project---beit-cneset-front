@@ -19,8 +19,11 @@ export const BoxIcons = styled.div`
   }
 
   a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
-    opacity: 0.6;
+  }
+
+  a:active {
+    transform: scale(0.99);
   }
 `;

@@ -3,7 +3,7 @@
 // import client from "./graphql/apolloClient";
 import { GlobalStyle } from "./features/global/style/Global.styled";
 import { BrowserRouter } from "react-router-dom";
-import Router from "./features/global/routers/Router";
+import Router from "./features/global/router/Router";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 

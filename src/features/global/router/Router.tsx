@@ -5,6 +5,8 @@ import Layout from "../layout/Layout";
 import AboutPage from "../pages/AboutPage";
 import AllBeitCnesetPage from "../../beitCneset/pages/AllBeitCnesetPage";
 import BeitCnesetDetailsPage from "../../beitCneset/pages/BeitCnesetDetailsPage";
+import SignUpPage from "../../users/pages/signupPage";
+import LoginPage from "../../users/pages/LoginPage";
 
 const Router = () => {
   return (
@@ -13,9 +15,9 @@ const Router = () => {
         <Route path={ROUTES.beitCneset} element={<BeitCnesetDetailsPage />} />
         <Route path={ROUTES.allBeitCneset} element={<AllBeitCnesetPage />} />
         <Route path={ROUTES.about} element={<AboutPage />} />
-        {/* <Route path={ROUTES.home} element={<BeitCnesetPage />} /> */}
-        {/* <Route path={ROUTES.home} element={<BeitCnesetPage />} /> */}
       </Route>
+      <Route path={ROUTES.login} element={<LoginPage />} />
+      <Route path={ROUTES.sign_up} element={<SignUpPage />} />
       <Route path={ROUTES.error} element={<ErrorPage />} />
     </Routes>
   );

@@ -3,7 +3,7 @@ import { MyCard } from "../../global/style/Card.styled";
 import { FC, useState } from "react";
 import { DivImage } from "../../global/style/DivImage.styled";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../global/routers/routesModel";
+import { ROUTES } from "../../global/router/routesModel";
 import { MyDiv } from "../../global/style/MyDiv.styled";
 import { MyButton } from "../../global/style/MyButton.styled";
 
