@@ -25,12 +25,12 @@ const Header = () => {
   return (
     <MyHeader>
       <BoxIcons>
-        <a
+        <Link
           style={{ border: "none" }}
-          href={`${ROUTES.home}/${ROUTES.allBeitCneset}`}
+          to={`${ROUTES.home}/${ROUTES.allBeitCneset}`}
         >
           <IoHome />
-        </a>
+        </Link>
       </BoxIcons>
 
       <MyDiv>
