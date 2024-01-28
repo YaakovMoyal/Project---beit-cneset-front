@@ -3,6 +3,7 @@ import axios from "axios";
 import { BeitCneset } from "../interfaces/beitCnesetIF.ts";
 import SearchComponent from "../components/Search.tsx";
 import AllBeitCneset from "../components/AllBeitCneset.tsx";
+import { MyDiv } from "../../global/style/MyDiv.styled.ts";
 
 const AllBeitCnesetPage = () => {
   const [results, setResults] = useState<BeitCneset[]>([]);
@@ -34,7 +35,9 @@ const AllBeitCnesetPage = () => {
 
   return (
     <>
-      <SearchComponent onSearch={handleSearch} />
+      <MyDiv $w="100%" $align_content="flex-end">
+        <SearchComponent onSearch={handleSearch} />
+      </MyDiv>
 
       <AllBeitCneset results={results} />
     </>

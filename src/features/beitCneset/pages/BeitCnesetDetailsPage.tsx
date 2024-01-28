@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { BeitCneset } from "../interfaces/beitCnesetIF";
-import { MyDiv } from "../../global/style/MyDiv.styled";
 import CardDetails from "../components/CardDetails";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -29,7 +28,7 @@ const BeitCnesetDetailsPage = () => {
   const { name, community, address, gabai, tfilot, image } = bcSelected;
 
   return (
-    <MyDiv>
+    <>
       <CardDetails
         image={image}
         name={name}
@@ -38,7 +37,7 @@ const BeitCnesetDetailsPage = () => {
         gabai={gabai}
         tfilot={tfilot}
       />
-    </MyDiv>
+    </>
   );
 };
 
