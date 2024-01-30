@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MyCard = styled.div`
   display: flex;
@@ -39,6 +39,8 @@ export const MyCard = styled.div`
     opacity: 0.8;
     cursor: pointer;
     background-color: #f0f0f0;
+    border: 1px solid #3498db;
+    border-radius: 5px;
   }
 
   &:active {

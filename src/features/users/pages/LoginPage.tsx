@@ -1,24 +1,30 @@
-// export default function LoginPage() {
-//   return <div>loginPage</div>;
-// }
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../global/router/routesModel';
+import {
+  StyledContainer,
+  StyledForm,
+  StyledInputField,
+  StyledSubmitButton,
+  StyledLink,
+} from '../../global/style/Form.styled';
+import { LoginIF } from '../interfaces/loginIF';
+import {
+  checkingValidEmail,
+  checkingValidPassword,
+} from '../helpers/validations';
 
-import { useState } from "react";
-import { MyDiv } from "../../global/style/MyDiv.styled";
-import { Gabai } from "../interfaces/usersIF";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../global/router/routesModel";
-
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
   const [loginDetails, setLoginDetails] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    field: keyof Gabai
+    field: keyof LoginIF
   ) => {
     setLoginDetails((prevDetails) => ({
       ...prevDetails,
@@ -26,50 +32,55 @@ const LoginPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const isValidForm =
+    checkingValidEmail(loginDetails.email) &&
+    checkingValidPassword(loginDetails.password);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
-      axios
-        .post("http://localhost:3000/users/login", loginDetails)
-        .then((response) => {
-          const token = response.data;
+      const response = await axios.post(
+        'http://localhost:3000/users/login',
+        loginDetails
+      );
 
-          // שמירת הטוקן ב-localStorage
-          localStorage.setItem("token", token);
+      const token = response.data;
+      localStorage.setItem('token', token);
 
-          navigate(`${ROUTES.home}/${ROUTES.allBeitCneset}`);
-        });
+      navigate(`${ROUTES.home}/${ROUTES.allBeitCneset}`);
     } catch (error) {
-      console.error("Error posting data:", error);
+      console.error('Error posting data:', error);
     }
   };
 
   return (
-    <MyDiv $h="80vh">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="text"
-            value={loginDetails.email}
-            onChange={(e) => handleInputChange(e, "email")}
-          />
-        </label>{" "}
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={loginDetails.password}
-            onChange={(e) => handleInputChange(e, "password")}
-          />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
+    <StyledContainer>
+      <h2>LOGIN</h2>
+      <br />
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledInputField
+          placeholder="Email"
+          type="text"
+          required
+          value={loginDetails.email}
+          onChange={(e) => handleInputChange(e, 'email')}
+        />
 
-      <Link to={ROUTES.sign_up}>אין לך חשבון? הירשם</Link>
-    </MyDiv>
+        <StyledInputField
+          placeholder="Password"
+          type="password"
+          required
+          value={loginDetails.password}
+          onChange={(e) => handleInputChange(e, 'password')}
+        />
+
+        <StyledSubmitButton disabled={!isValidForm} type="submit">
+          Login
+        </StyledSubmitButton>
+        <StyledLink to={ROUTES.sign_up}>אין לך חשבון? הירשם</StyledLink>
+      </StyledForm>
+    </StyledContainer>
   );
 };
 
