@@ -78,7 +78,9 @@ const LoginPage = () => {
         <StyledSubmitButton disabled={!isValidForm} type="submit">
           Login
         </StyledSubmitButton>
-        <StyledLink to={ROUTES.sign_up}>אין לך חשבון? הירשם</StyledLink>
+        <StyledLink to={`${ROUTES.home}/${ROUTES.sign_up}`}>
+          אין לך חשבון? הירשם
+        </StyledLink>
       </StyledForm>
     </StyledContainer>
   );
