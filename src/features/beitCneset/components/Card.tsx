@@ -1,14 +1,14 @@
-import { BeitCneset } from "../interfaces/beitCnesetIF";
-import { MyCard } from "../../global/style/Card.styled";
-import { FC, useState } from "react";
-import { DivImage } from "../../global/style/DivImage.styled";
-import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../global/router/routesModel";
-import { MyDiv } from "../../global/style/MyDiv.styled";
-import { MyButton } from "../../global/style/MyButton.styled";
-import { FaEdit } from "react-icons/fa";
+import { BeitCnesetIF } from '../interfaces/beitCnesetIF';
+import { MyCard } from '../../global/style/Card.styled';
+import { FC, useState } from 'react';
+import { DivImage } from '../../global/style/DivImage.styled';
+import { Link, useNavigate } from 'react-router-dom';
+import { ROUTES } from '../../global/router/routesModel';
+import { MyDiv } from '../../global/style/MyDiv.styled';
+import { MyButton } from '../../global/style/MyButton.styled';
+import { FaEdit } from 'react-icons/fa';
 
-const Card: FC<BeitCneset> = ({
+const Card: FC<BeitCnesetIF> = ({
   name,
   community,
   address,
@@ -41,7 +41,7 @@ const Card: FC<BeitCneset> = ({
           setShowMore(!showMore);
         }}
       >
-        {showMore ? "CLOSE" : "SHOW MORE"}
+        {showMore ? 'CLOSE' : 'SHOW MORE'}
       </MyButton>
       <Link
         to={`edit/${name}`}

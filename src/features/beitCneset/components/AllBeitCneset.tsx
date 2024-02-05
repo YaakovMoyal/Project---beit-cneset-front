@@ -1,9 +1,9 @@
-import { MyDiv } from "../../global/style/MyDiv.styled";
-import { BeitCneset } from "../interfaces/beitCnesetIF";
-import Card from "./Card";
+import { MyDiv } from '../../global/style/MyDiv.styled';
+import { BeitCnesetIF } from '../interfaces/beitCnesetIF';
+import Card from './Card';
 
 interface AllBeitCnesetProps {
-  results: BeitCneset[];
+  results: BeitCnesetIF[];
 }
 
 export default function AllBeitCneset({ results }: AllBeitCnesetProps) {

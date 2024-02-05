@@ -1,20 +1,21 @@
-import { BeitCneset } from "../interfaces/beitCnesetIF";
-import { MyCardDetails } from "../../global/style/CardDetails.styled";
-import { MyBox } from "../../global/style/MyBox.styled";
-import { FC } from "react";
-import { MyDiv } from "../../global/style/MyDiv.styled";
-import OpenLayersMap from "../../global/components/Map";
-import ImageForDetails from "./ImageForDetails";
-import InfoForDetails from "./InfoForDetails";
-import TfilotForDetails from "./TfilotForDetails";
+import { BeitCnesetIF } from '../interfaces/beitCnesetIF';
+import { MyCardDetails } from '../../global/style/CardDetails.styled';
+import { MyBox } from '../../global/style/MyBox.styled';
+import { FC } from 'react';
+import { MyDiv } from '../../global/style/MyDiv.styled';
+// import OpenLayersMap from '../../global/components/Map';
+import ImageForDetails from './ImageForDetails';
+import InfoForDetails from './InfoForDetails';
+import TfilotForDetails from './TfilotForDetails';
 
-const CardDetails: FC<BeitCneset> = ({
+const CardDetails: FC<BeitCnesetIF> = ({
   name,
   community,
   address,
   gabai,
   tfilot,
   image,
+  URLaddress,
 }) => {
   return (
     <MyCardDetails>
@@ -41,7 +42,15 @@ const CardDetails: FC<BeitCneset> = ({
       >
         <MyBox>
           <span>{address}</span>
-          <OpenLayersMap />
+          {/* <OpenLayersMap /> */}
+          <iframe
+            title="map"
+            src={URLaddress}
+            width="450"
+            height="350"
+            style={{ border: 0 }}
+            loading="lazy"
+          ></iframe>
         </MyBox>
 
         <TfilotForDetails tfilot={tfilot} />

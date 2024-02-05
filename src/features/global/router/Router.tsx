@@ -1,13 +1,13 @@
-import { Routes, Route } from "react-router-dom";
-import { ROUTES } from "./routesModel";
-import ErrorPage from "../pages/ErrorPage";
-import Layout from "../layout/Layout";
-import AboutPage from "../pages/AboutPage";
-import AllBeitCnesetPage from "../../beitCneset/pages/AllBeitCnesetPage";
-import BeitCnesetDetailsPage from "../../beitCneset/pages/BeitCnesetDetailsPage";
-import LoginPage from "../../users/pages/LoginPage";
-import SignUpPage from "../../users/pages/SignUpPage";
-import EditBeitCnesetPage from "../../beitCneset/pages/EditBeitCnesetPage";
+import { Routes, Route } from 'react-router-dom';
+import { ROUTES } from './routesModel';
+import ErrorPage from '../pages/ErrorPage';
+import Layout from '../layout/Layout';
+import AboutPage from '../pages/AboutPage';
+import AllBeitCnesetPage from '../../beitCneset/pages/AllBeitCnesetPage';
+import BeitCnesetDetailsPage from '../../beitCneset/pages/BeitCnesetDetailsPage';
+import LoginPage from '../../users/pages/LoginPage';
+import SignUpPage from '../../users/pages/SignUpPage';
+import EditBeitCnesetPage from '../../beitCneset/pages/EditBeitCnesetPage';
 
 const Router = () => {
   return (

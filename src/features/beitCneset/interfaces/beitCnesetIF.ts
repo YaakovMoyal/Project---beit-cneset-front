@@ -1,15 +1,16 @@
-import { Gabai } from "../../users/interfaces/usersIF";
+import { Gabai } from '../../users/interfaces/usersIF';
 
-export interface Tfila {
+export interface TfilaIF {
   tfila: string;
   time: string;
 }
 
-export interface BeitCneset {
+export interface BeitCnesetIF {
   name: string;
   address: string;
+  URLaddress: string;
   community: string;
   image: string;
   gabai: Gabai;
-  tfilot: Tfila[];
+  tfilot: TfilaIF[];
 }

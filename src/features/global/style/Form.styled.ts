@@ -44,7 +44,8 @@ export const StyledInputField = styled.input`
 `;
 
 export const StyledSubmitButton = styled.button`
-  background-color: ${({ disabled }) => (disabled ? '#888' : '#4caf50')};
+  background-color: ${({ disabled, color }) =>
+    disabled ? '#888' : color ? color : '#4caf50'};
   color: white;
   padding: 10px;
   border: none;

@@ -1,8 +1,8 @@
-import { MyBox } from "../../global/style/MyBox.styled";
-import { Tfila } from "../interfaces/beitCnesetIF";
+import { MyBox } from '../../global/style/MyBox.styled';
+import { TfilaIF } from '../interfaces/beitCnesetIF';
 
 interface TfilotForDetailsProps {
-  tfilot: Tfila[];
+  tfilot: TfilaIF[];
 }
 
 export default function TfilotForDetails({ tfilot }: TfilotForDetailsProps) {

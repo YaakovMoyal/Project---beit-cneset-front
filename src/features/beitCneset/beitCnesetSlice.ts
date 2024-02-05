@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { BeitCneset } from "./interfaces/beitCnesetIF";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { BeitCnesetIF } from './interfaces/beitCnesetIF';
 
 interface InitialState {
-  allBeitCneset: BeitCneset[];
+  allBeitCneset: BeitCnesetIF[];
 }
 
 const initialState: InitialState = {
@@ -11,10 +11,10 @@ const initialState: InitialState = {
 };
 
 export const BeitCnesetSlice = createSlice({
-  name: "BeitCneset",
+  name: 'BeitCneset',
   initialState,
   reducers: {
-    setBeitCneset: (state, action: PayloadAction<BeitCneset[]>) => {
+    setBeitCneset: (state, action: PayloadAction<BeitCnesetIF[]>) => {
       state.allBeitCneset = action.payload;
       return state;
     },

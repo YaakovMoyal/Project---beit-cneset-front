@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { BeitCneset } from "../interfaces/beitCnesetIF.ts";
-import SearchComponent from "../components/Search.tsx";
-import AllBeitCneset from "../components/AllBeitCneset.tsx";
-import { MyDiv } from "../../global/style/MyDiv.styled.ts";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { BeitCnesetIF } from '../interfaces/beitCnesetIF.ts';
+import SearchComponent from '../components/Search.tsx';
+import AllBeitCneset from '../components/AllBeitCneset.tsx';
+import { MyDiv } from '../../global/style/MyDiv.styled.ts';
 
 const AllBeitCnesetPage = () => {
-  const [results, setResults] = useState<BeitCneset[]>([]);
-  const [originalData, setOriginalData] = useState<BeitCneset[]>([]);
+  const [results, setResults] = useState<BeitCnesetIF[]>([]);
+  const [originalData, setOriginalData] = useState<BeitCnesetIF[]>([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/beit-cneset")
+      .get('http://localhost:3000/beit-cneset')
       .then((res) => {
         const { data } = res;
         setResults(data);
         setOriginalData(data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       });
   }, []);
 
