@@ -5,6 +5,24 @@
 This is a vite & react client
 for tfilot-times
 
+#
+
+#
+
+#
+
+## Tech Stack
+
+**Server:** Node, NestJS, MongoDB, Redis, Json-web-token, bcryptjs ...
+
+**Client:** Vite, React, React-router-dom, Redux, jwt-decode, Styled-Components ...
+
+#
+
+#
+
+#
+
 ## Installation
 
 Download or clone the project from this repo
