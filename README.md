@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a react client
+This is a vite & react client
 for tfilot-times
 
 ## Installation
